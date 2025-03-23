@@ -12,7 +12,7 @@ router.get('/', auth, async (req, res) => {
     res.json(tasks);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ msg: 'Server Error' }); // Return JSON response
   }
 });
 
@@ -35,7 +35,7 @@ router.post('/', auth, async (req, res) => {
     res.json(task);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ msg: 'Server Error' }); // Return JSON response
   }
 });
 
@@ -44,7 +44,9 @@ router.put('/:id', auth, async (req, res) => {
   try {
     let task = await Task.findById(req.params.id);
 
-    if (!task) return res.status(404).json({ msg: 'Task not found' });
+    if (!task) {
+      return res.status(404).json({ msg: 'Task not found' });
+    }
 
     // Make sure user owns task
     if (task.user.toString() !== req.user.id) {
@@ -59,27 +61,36 @@ router.put('/:id', auth, async (req, res) => {
     res.json(task);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ msg: 'Server Error' }); // Return JSON response
   }
 });
 
 // Delete task
 router.delete('/:id', auth, async (req, res) => {
   try {
-    let task = await Task.findById(req.params.id);
+    console.log('Deleting task with ID:', req.params.id);
+    console.log('Logged-in user ID:', req.user.id);
 
-    if (!task) return res.status(404).json({ msg: 'Task not found' });
+    let task = await Task.findById(req.params.id);
+    console.log('Task found:', task);
+
+    if (!task) {
+      console.log('Task not found');
+      return res.status(404).json({ msg: 'Task not found' });
+    }
 
     // Make sure user owns task
     if (task.user.toString() !== req.user.id) {
+      console.log('User not authorized to delete this task');
       return res.status(401).json({ msg: 'Not authorized' });
     }
 
-    await Task.findByIdAndRemove(req.params.id);
+    await Task.findByIdAndDelete(req.params.id); // Use findByIdAndDelete
+    console.log('Task deleted successfully');
     res.json({ msg: 'Task removed' });
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
+    console.error('Error deleting task:', err.message);
+    res.status(500).json({ msg: 'Server Error' });
   }
 });
 

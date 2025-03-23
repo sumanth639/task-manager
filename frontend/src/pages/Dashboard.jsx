@@ -174,7 +174,7 @@ const Dashboard = () => {
               </div>
             </div> */}
 
-            <div>
+            <div className="">
               <h2 className="text-lg font-medium text-gray-900 mb-4">
                 COMPLETED ({completedTasks.length})
               </h2>

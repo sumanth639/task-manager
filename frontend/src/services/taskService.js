@@ -6,7 +6,7 @@ const fetchWithAuth = async (url, options = {}) => {
 
   const defaultHeaders = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`, // Use the Bearer prefix
+    Authorization: `Bearer ${token}`,
   };
 
   const response = await fetch(url, {
@@ -17,7 +17,7 @@ const fetchWithAuth = async (url, options = {}) => {
     },
   });
 
-  const data = await response.json();
+  const data = await response.json(); // Parse response as JSON
 
   if (!response.ok) {
     throw new Error(data.message || 'Something went wrong');

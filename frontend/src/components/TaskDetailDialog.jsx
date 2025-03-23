@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { Clock, Calendar, FileText, Trash, Edit } from 'lucide-react';
+import { Clock, Calendar, FileText, Trash, Edit, Check } from 'lucide-react';
 import { formatTime } from '../lib/utils';
 import { format } from 'date-fns';
 
@@ -40,6 +40,11 @@ const TaskDetailDialog = ({ isOpen, onClose, task, onUpdate, onDelete }) => {
     setTimeSpent(newTotal);
     setAdditionalTime(0);
     setIsAddingTimeSpent(false);
+  };
+
+  const handleMarkAsCompleted = async () => {
+    await onUpdate(task._id, { status: 'COMPLETED' });
+    setStatus('COMPLETED'); // Update local state
   };
 
   const getPriorityVariant = (priority) => {
@@ -252,6 +257,19 @@ const TaskDetailDialog = ({ isOpen, onClose, task, onUpdate, onDelete }) => {
             </div>
           )}
         </div>
+
+        {/* Mark as Completed Button */}
+        {status !== 'COMPLETED' && (
+          <div className="mt-6">
+            <Button
+              variant="success"
+              className="w-full"
+              onClick={handleMarkAsCompleted}
+            >
+              <Check size={16} className="mr-2" /> Mark as Completed
+            </Button>
+          </div>
+        )}
 
         <div className="flex justify-end mt-6">
           <Button variant="outline" onClick={onClose}>

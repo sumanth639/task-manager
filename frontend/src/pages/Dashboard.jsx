@@ -81,9 +81,7 @@ const Dashboard = () => {
     filter === 'All' ? tasks : tasks.filter((task) => task.type === filter);
 
   const todoTasks = filteredTasks.filter((task) => task.status === 'TODO');
-  const inProgressTasks = filteredTasks.filter(
-    (task) => task.status === 'IN_PROGRESS'
-  );
+
   const completedTasks = filteredTasks.filter(
     (task) => task.status === 'COMPLETED'
   );
@@ -97,12 +95,12 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
+    <div className="min-h-screen bg-[#fdf2e9]">
+      <header className=" bg-[#fdf2e9] border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-gray-900">
+              <span className="text-2xl font-bold text-[#00000]">
                 TaskForge{' '}
               </span>
             </div>

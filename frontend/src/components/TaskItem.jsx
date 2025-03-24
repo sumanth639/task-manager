@@ -25,7 +25,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
     <>
       {/* Make the entire card clickable */}
       <div onClick={() => setIsDetailOpen(true)} className="cursor-pointer">
-        <Card className="hover:shadow-md transition-shadow">
+        <Card className="hover:shadow-md transition-shadow bg-[#fff9f7]">
           <CardContent className="p-4">
             <div className="flex justify-between items-start">
               <div className="flex-1">

@@ -2,15 +2,15 @@ import * as React from 'react';
 
 const buttonVariants = {
   default:
-    'bg-[#F8F5E9] text-primary hover:bg-primary hover:text-primary-foreground border border-primary',
+    'bg-[#D98324] text-primary hover:bg-primary hover:text-primary-foreground border border-primary',
   destructive:
-    'bg-[#F8F5E9] text-destructive hover:bg-destructive hover:text-destructive-foreground border border-destructive',
+    'bg-[#D98324] text-destructive hover:bg-destructive hover:text-destructive-foreground border border-destructive',
   outline:
-    'border border-input bg-[#F8F5E9] hover:bg-accent hover:text-accent-foreground',
+    'border border-input bg-[#D98324] hover:bg-accent hover:text-accent-foreground',
   secondary:
-    'bg-[#F8F5E9] text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground border border-secondary',
+    'bg-[#D98324] text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground border border-secondary',
   ghost:
-    'bg-[#F8F5E9] hover:bg-accent hover:text-accent-foreground border border-transparent hover:border-accent',
+    'bg-[#D98324] hover:bg-accent hover:text-accent-foreground border border-transparent hover:border-accent',
   link: 'bg-transparent text-primary underline-offset-4 hover:underline border-none',
 };
 

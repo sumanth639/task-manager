@@ -142,8 +142,8 @@ const Dashboard = () => {
             </TabsTrigger>
           </TabsList>
 
-          <div>
-            <div className="mb-8">
+          <div className="flex flex-row gap-8">
+            <div className="flex-1">
               <h2 className="text-lg font-medium text-gray-900 mb-4">
                 TODO ({todoTasks.length})
               </h2>
@@ -159,23 +159,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/*            <div className="mb-8">
-              <h2 className="text-lg font-medium text-gray-900 mb-4">
-                IN PROGRESS ({inProgressTasks.length})
-              </h2>
-              <div className="space-y-4">
-                {inProgressTasks.map((task) => (
-                  <TaskItem
-                    key={task._id}
-                    task={task}
-                    onUpdate={handleUpdateTask}
-                    onDelete={handleDeleteTask}
-                  />
-                ))}
-              </div>
-            </div> */}
-
-            <div className="">
+            <div className="flex-1">
               <h2 className="text-lg font-medium text-gray-900 mb-4">
                 COMPLETED ({completedTasks.length})
               </h2>

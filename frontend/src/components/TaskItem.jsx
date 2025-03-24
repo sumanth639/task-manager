@@ -32,9 +32,6 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-gray-900">{task.title}</h3>
                   <div className="flex items-center space-x-2">
-                    <Badge variant={getPriorityVariant(task.priority)}>
-                      {task.priority} Priority
-                    </Badge>
                     <button
                       onClick={(e) => {
                         e.stopPropagation(); // Prevent card click event
@@ -68,6 +65,9 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
                       <span>{task.attachments.length} Files</span>
                     </div>
                   )}
+                  <Badge variant={getPriorityVariant(task.priority)}>
+                    {task.priority} Priority
+                  </Badge>
                 </div>
               </div>
             </div>

@@ -112,6 +112,7 @@ const Dashboard = () => {
                 size="sm"
                 className="flex items-center gap-2"
                 onClick={() => setIsAddTaskOpen(true)}
+                disabled={!user}
               >
                 <Plus size={16} />
                 Add Task

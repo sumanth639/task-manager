@@ -2,7 +2,7 @@
 
 /* Additional custom styles */
 :root {
-  --background: 0 0% 100%;
+  --background: 47 56% 94%; /* #F8F5E9 converted to HSL */
   --foreground: 240 10% 3.9%;
 
   --card: 0 0% 100%;
@@ -68,6 +68,6 @@
 }
 
 body {
-  background-color: hsl(var(--background));
+  background-color: #f8f5e9; /* Direct hex value */
   color: hsl(var(--foreground));
 }

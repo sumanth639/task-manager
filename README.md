@@ -1,5 +1,7 @@
 # Task Manager 📋
 
+![Task Manager Screenshot](https://github.com/sumanth639/task-manager/blob/c81738809983179809b1757c3f2d0516c436d964/App%20preview.png)
+
 ## Overview
 
 Task Manager is a comprehensive web application designed to help users efficiently organize and manage their tasks. Built with modern web technologies, the app provides a seamless task management experience with robust features and a user-friendly interface.

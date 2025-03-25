@@ -17,7 +17,7 @@ app.use(express.json());
 // Enable CORS
 app.use(
   cors({
-    origin: 'https://task-manager-olive-tau.vercel.app',
+    origin: 'https://taskforge-hgkj.onrender.com',
     credentials: true,
   })
 );

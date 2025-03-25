@@ -86,14 +86,6 @@ const Dashboard = () => {
     (task) => task.status === 'COMPLETED'
   );
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        Loading...
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-[#fdf2e9]">
       <header className=" bg-[#fdf2e9] border-b border-gray-200">
@@ -141,9 +133,7 @@ const Dashboard = () => {
           </TabsList>
 
           {loading ? (
-            <div className="flex items-center justify-center h-screen">
-              Loading...
-            </div>
+            <div className="flex items-center justify-center ">Loading...</div>
           ) : (
             <div className="flex flex-row gap-8">
               <div className="flex-1">

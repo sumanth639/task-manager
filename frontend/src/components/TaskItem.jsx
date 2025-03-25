@@ -23,9 +23,8 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
 
   return (
     <>
-      {/* Make the entire card clickable */}
       <div onClick={() => setIsDetailOpen(true)} className="cursor-pointer">
-        <Card className="hover:shadow-md transition-shadow bg-[#fff9f7]">
+        <Card className="hover:shadow-md transition-shadow bg-[#fff9f7] mt-8">
           <CardContent className="p-4">
             <div className="flex justify-between items-start">
               <div className="flex-1">
@@ -34,7 +33,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
                   <div className="flex items-center space-x-2">
                     <button
                       onClick={(e) => {
-                        e.stopPropagation(); // Prevent card click event
+                        e.stopPropagation();
                         setIsDetailOpen(true);
                       }}
                       className="text-gray-500 hover:text-gray-700"

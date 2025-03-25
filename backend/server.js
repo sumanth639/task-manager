@@ -17,7 +17,7 @@ app.use(express.json());
 // Enable CORS
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://task-manager-olive-tau.vercel.app/dashboard',
     credentials: true,
   })
 );
